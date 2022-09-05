@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+													
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Flight Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="Airline" placeholder="Airline" required="required" /><br>
+    	<input type="text" name="Source" placeholder="Source" required="required" /><br>
+        <input type="text" name="Destination" placeholder="Destination" required="required" /><br>
+        <input type="text" name="Total_Stops" placeholder="Total_Stops" required="required" /><br>
+        <input type="text" name="Additional_Info" placeholder="Additional_Info" required="required" /><br>
+        <input type="text" name="Date" placeholder="Date" required="required" /><br>
+        <input type="text" name="Month" placeholder="Month" required="required" /><br>
+        <input type="text" name="Year" placeholder="Year" required="required" /><br>
+        <input type="text" name="Arrival_hour" placeholder="Arrival_hour" required="required" /><br>
+        <input type="text" name="Arrival_minutes" placeholder="Arrival_minutes" required="required" /><br>
+        <input type="text" name="Dep_Time_hour" placeholder="Dep_Time_hour" required="required" /><br>
+        <input type="text" name="Dep_Time_minutes" placeholder="Dep_Time_minutes" required="required" /><br>
+        <input type="text" name="duration_hour" placeholder="duration_hour" required="required" /><br>
+        <input type="text" name="duration_min" placeholder="duration_min" required="required" /><br>
+
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
